@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+@-webkit-keyframes modalOpen {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes modalOpen {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes modalHide {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+@keyframes modalHide {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+.wrapper {
+  height: 100vh;
+  font-family: sans-serif;
+}
+.wrapper .main {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 10vh;
+}
+.wrapper .main .main__card {
+  width: 50%;
+  height: 70%;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 20px;
+}
+.wrapper .main .main__card.card .card__title {
+  font-size: 3rem;
+  border-bottom: 1px solid #000;
+  padding: 10px;
+}
+.wrapper .main .main__card.card .card__text {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  padding: 15px;
+}
+.wrapper .main .main__card.card .card__container-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.wrapper .main .main__card.card .card__container-buttons * {
+  height: 50px;
+  padding: 10px;
+  background: inherit;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  position: relative;
+  -webkit-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+}
+.wrapper .main .main__card.card .card__container-buttons *:active {
+  top: 2px;
+}
+.wrapper .main .main__card.card .card__container-buttons *:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.wrapper .main .main__card.card .card__container-buttons .card__button-submit {
+  margin-left: 20px;
+}
+.wrapper .main .modal {
+  width: 60%;
+  height: 40%;
+  padding: 15px;
+  margin: 0 auto;
+  position: absolute;
+  top: 20%;
+  border-radius: 10px;
+}
+.wrapper .main .modal[open] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-animation-name: modalOpen;
+          animation-name: modalOpen;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+}
+.wrapper .main .modal.hide {
+  -webkit-animation-name: modalHide;
+          animation-name: modalHide;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+.wrapper .main .modal .modal__title {
+  font-size: 2.5rem;
+  padding: 7px;
+  border-bottom: 1px solid #000;
+}
+.wrapper .main .modal .modal__text {
+  font-size: 1.35rem;
+  padding: 10px;
+}
+.wrapper .main .modal .modal__close-button {
+  height: 50px;
+  padding: 10px;
+  background: inherit;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  position: relative;
+  -webkit-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 20%;
+  width: 200px;
+}
+.wrapper .main .modal .modal__close-button:active {
+  top: 2px;
+}
+.wrapper .main .modal .modal__close-button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.wrapper .main .modal::-webkit-backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+.wrapper .main .modal::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
